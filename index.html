@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="icon_asset_zahirah/zahirah_favicon.png">
+  <title>Zahirah Salma Nuha - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background-image: url('icon_asset_zahirah/bg_zahirah_frontpage.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: sans-serif;
+      color: #2d3748;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    section {
+      flex-grow: 1;
+      padding-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 500px;
+      height: auto;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .curve-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding-bottom: 2rem;
+
+      overflow-x: auto;
+      overflow-y: visible;
+    }
+
+    .curve-container a {
+      width: 120px;
+      height: auto;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      overflow: visible; 
+    }
+
+    .curve-container a:hover img {
+      transform: scale(1.05);
+    }
+
+    .curve-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: transform 0.3s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #a0aec0;
+      background: transparent;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <img src="icon_asset_zahirah/mylogo.png" alt="Zahirah SN Logo" class="logo" />
+
+    <div class="curve-container">
+      <a href="illustration.html" title="Illustrations" target="_blank" rel="noopener">
+        <img src="icon_asset_zahirah/icon_illustration2.png" alt="Illustration Icon" />
+      </a>
+      <a href="animation.html" title="Animations" target="_blank" rel="noopener">
+        <img src="icon_asset_zahirah/icon_animation2.png" alt="Animation Icon" />
+      </a>
+      <a href="wayfinding.html" title="Wayfinding" target="_blank" rel="noopener">
+        <img src="icon_asset_zahirah/icon_wayfinding2.png" alt="Wayfinding Icon" />
+      </a>
+      <a href="branding.html" title="Branding" target="_blank" rel="noopener">
+        <img src="icon_asset_zahirah/icon_branding2.png" alt="Branding Icon" />
+      </a>
+      <a href="books.html" title="Books" target="_blank" rel="noopener">
+        <img src="icon_asset_zahirah/icon_books2.png" alt="Books Icon" />
+      </a>
+      <a href="aboutme.html" title="About Me" target="_blank" rel="noopener">
+        <img src="icon_asset_zahirah/icon_aboutme2.png" alt="About Me Icon" />
+      </a>
+    </div>
+  </section>
+
+  <footer>© 2025 Zahirah SN</footer>
+
+  <script src="navbar.js"></script>
+</body>
+</html>

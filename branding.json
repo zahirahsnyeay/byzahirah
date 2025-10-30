@@ -1,0 +1,32 @@
+{
+  "brandings": [
+    {
+      "id": 1,
+      "title": "Brand Identity Project A",
+      "image": "https://placehold.co/400x600?text=Brand+A",
+      "description": "A branding project focusing on minimalistic design and modern aesthetics.",
+      "bts": [
+        "https://placehold.co/600x400?text=Sketch+1",
+        "https://placehold.co/600x400?text=Sketch+2",
+        "https://placehold.co/600x400?text=Process+3"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Brand Identity Project B",
+      "image": "https://placehold.co/400x600?text=Brand+B",
+      "description": "A bold branding exploration with dynamic visuals.",
+      "bts": [
+        "https://placehold.co/600x400?text=Concept+1",
+        "https://placehold.co/600x400?text=Concept+2"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Brand Identity Project C",
+      "image": "https://placehold.co/400x600?text=Brand+C",
+      "description": "Creative branding package with unique typography.",
+      "bts": []
+    }
+  ]
+}

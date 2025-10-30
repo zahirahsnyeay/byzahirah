@@ -1,0 +1,48 @@
+{
+  "written": [
+    {
+      "id": 1,
+      "title": "The Story Begins",
+      "image": "https://placehold.co/400x600?text=Book+1",
+      "description": "A magical journey through the first chapters of my storytelling adventures.",
+      "bts": [
+        "https://placehold.co/600x400?text=BTS+1-1",
+        "https://placehold.co/600x400?text=BTS+1-2",
+        "https://placehold.co/600x400?text=BTS+1-3"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Beyond the Pages",
+      "image": "https://placehold.co/400x600?text=Book+2",
+      "description": "Exploring worlds beyond imagination through illustrations and narratives.",
+      "bts": [
+        "https://placehold.co/600x400?text=BTS+2-1",
+        "https://placehold.co/600x400?text=BTS+2-2"
+      ]
+    }
+  ],
+  "illustrated": [
+    {
+      "id": 3,
+      "title": "Fairy Tales Reimagined",
+      "image": "https://placehold.co/400x600?text=Book+3",
+      "description": "Classic fairy tales with a modern artistic twist.",
+      "bts": [
+        "https://placehold.co/600x400?text=BTS+3-1",
+        "https://placehold.co/600x400?text=BTS+3-2"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Dreamscapes",
+      "image": "https://placehold.co/400x600?text=Book+4",
+      "description": "An illustrated dive into surreal dream worlds.",
+      "bts": [
+        "https://placehold.co/600x400?text=BTS+4-1",
+        "https://placehold.co/600x400?text=BTS+4-2",
+        "https://placehold.co/600x400?text=BTS+4-3"
+      ]
+    }
+  ]
+}

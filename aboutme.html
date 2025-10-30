@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="icon_asset_zahirah/zahirah_favicon.png">
+  <title>About Me - Zahirah SN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    nav {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+      box-shadow: none !important;
+      border-bottom: none !important;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      background-image: url('icon_asset_zahirah/zahirah_header_white.png');
+      background-size: cover;
+      background-position: center;
+      position: fixed;
+      width: 100%;
+      z-index: 50;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    }
+
+    .nav-icon {
+      width: 90px;
+      height: auto;
+      cursor: pointer;
+      object-fit: contain;
+    }
+
+    .nav-icon-active {
+      background-color: #ebffcb; /* bright yellow */
+      padding: 6px 8px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(213, 213, 213, 0.6);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav-icon-active:hover {
+      box-shadow: 0 4px 12px rgba(255, 214, 0, 0.9);
+    }
+
+    .logo-img {
+      height: 80px;
+      width: auto;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    section {
+      flex-grow: 1;
+    }
+
+    footer {
+      position: relative;
+      height: auto;
+    }
+
+    footer img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    footer > div {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      user-select: none;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="text-gray-800 font-sans">
+
+<!-- Navbar -->
+<nav>
+  <div class="max-w-8xl mx-20 px-8 flex justify-between items-center">
+    <!-- Left: Logo -->
+    <a href="index.html">
+      <img src="icon_asset_zahirah/mylogo.png" alt="Zahirah SN Logo" class="logo-img" />
+    </a>
+
+    <!-- Right: All 6 Icons in a row -->
+    <div class="flex space-x-6">
+      <a href="books.html" aria-label="Books">
+        <img src="icon_asset_zahirah/icon_books2.png" alt="Books" class="nav-icon" />
+      </a>
+      <a href="branding.html" aria-label="Branding">
+        <img src="icon_asset_zahirah/icon_branding2.png" alt="Branding" class="nav-icon" />
+      </a>
+      <a href="aboutme.html" aria-label="About Me">
+        <div class="nav-icon-active">
+          <img src="icon_asset_zahirah/icon_aboutme2.png" alt="About Me" class="nav-icon" />
+        </div>
+      </a>
+      <a href="animation.html" aria-label="Animation">
+        <img src="icon_asset_zahirah/icon_animation2.png" alt="Animation" class="nav-icon" />
+      </a>
+      <a href="illustration.html" aria-label="Illustration">
+        <img src="icon_asset_zahirah/icon_illustration2.png" alt="Illustration" class="nav-icon" />
+      </a>
+      <a href="wayfinding.html" aria-label="Wayfinding">
+        <img src="icon_asset_zahirah/icon_wayfinding2.png" alt="Wayfinding" class="nav-icon" />
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- text judul -->
+<!-- About Me Section -->
+<section class="pt-56 pb-5 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-30 flex flex-col md:flex-row md:items-center md:justify-between">
+    
+    <!-- Photo Area (on the left now) -->
+    <div class="md:w-1/2 flex justify-center mb-10 md:mb-0">
+        <img src="icon_asset_zahirah/zahirah_profile.png" alt="Zahirah SN Photo" class="w-[350px] h-auto object-cover" />
+
+    </div>
+
+    <!-- Text Area -->
+    <div class="md:w-1/2 md:pl-12">
+      <h1 class="text-4xl font-bold mb-4">I'm Zahirah</h1>
+      <p class="text-lg leading-relaxed">
+        Zahirah Salma Nuha is a final-year Master of Design and Production student at the University of Melbourne, Victorian College of The Arts, specialising in Graphic Design. In 2023, She graduated from Institut Teknologi Sepuluh Nopember (ITS) in Indonesia with Visual Communication Design as the 8th most competitive major at ITS. She earned recognition as the fastest and most outstanding Bachelor of Design graduate. Zahirah is passionate about animation, design, storytelling, and illustration. Her work has gained recognition in Indonesia through several notable competition wins, reflecting her dedication and creative skills.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <img src="icon_asset_zahirah/zahirah_footer.png" alt="Footer background" />
+  <div>© 2025 Zahirah SN</div>
+</footer>
+
+<!-- Scripts -->
+<script src="navbar.js"></script>
+
+</body>
+</html>
