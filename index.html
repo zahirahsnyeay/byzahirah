@@ -13,7 +13,7 @@
     }
 
     body {
-      background-image: url('icon_asset_zahirah/bg_zahirah_frontpage.png');
+      background-image: url('icon_asset_zahirah/bg_zahirah_index.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -23,6 +23,7 @@
       flex-direction: column;
       min-height: 100vh;
     }
+
     section {
       flex-grow: 1;
       padding-top: 5rem;
@@ -33,7 +34,7 @@
     }
 
     .logo {
-      max-width: 500px;
+      max-width: 600px;
       height: auto;
       margin-bottom: 4rem;
       position: relative;
@@ -49,7 +50,6 @@
       max-width: 1000px;
       margin: 0 auto;
       padding-bottom: 2rem;
-
       overflow-x: auto;
       overflow-y: visible;
     }
@@ -83,6 +83,25 @@
       background: transparent;
       margin-top: auto;
     }
+
+    /* Responsive for phones: 3 columns × 2 rows */
+    @media (max-width: 640px) {
+      .curve-container {
+        flex-wrap: wrap;           /* allow icons to wrap to next row */
+        justify-content: center;   /* center the icons */
+        gap: 1rem;                 /* spacing between icons */
+      }
+
+      .curve-container a {
+        flex: 0 0 calc(33.33% - 0.66rem); /* 3 columns */
+        max-width: 100px;                  /* max width of each icon */
+      }
+
+      .logo {
+        max-width: 350px;
+        margin-bottom: 3rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -110,6 +129,9 @@
       </a>
     </div>
   </section>
+
+  <footer>
+  </footer>
 
   <script src="navbar.js"></script>
 </body>
