@@ -6,24 +6,44 @@
   <link rel="icon" type="image/png" href="icon_asset_zahirah/zahirah_favicon.png">
   <title>Illustration - Zahirah SN</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+      color: #333;
+      cursor: none;
+    }
+
     nav {
-      font-family: 'matejournal';
-      box-shadow: none !important;
-      border-bottom: none !important;
-      padding-top: 30px;
-      padding-bottom: 30px;
-      background-image: url('icon_asset_zahirah/zahirah_header_white.png');
+      width: 350px;
+      flex-shrink: 0;
+      background-image: url('icon_asset_zahirah/bg_navbar.png');
       background-size: cover;
       background-position: center;
-      position: fixed;
-      width: 100%;
+      padding: 30px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
       z-index: 50;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'matejournal', cursive;
+    .logo-img {
+      height: 70px;
+      width: auto;
+    }
+
+    .nav-icons-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 40px;
     }
 
     .nav-icon {
@@ -34,7 +54,7 @@
     }
 
     .nav-icon-active {
-      background-color: #ebffcb; /* bright yellow */
+      background-color: #ebffcb;
       padding: 6px 8px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(213, 213, 213, 0.6);
@@ -45,61 +65,26 @@
       box-shadow: 0 4px 12px rgba(255, 214, 0, 0.9);
     }
 
-    .logo-img {
-      height: 80px;
-      width: auto;
-    }
-
-    body {
+    main {
+      flex: 1;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      margin: 0;
+      background-image: url('icon_asset_zahirah/bg_page.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     section {
       flex-grow: 1;
+      padding: 90px 30px 50px 50px;
     }
-
-    .row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-
-/* Create four equal columns that sits next to each other */
-.column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-.column img {
-  margin-top: 20px;
-  vertical-align: middle;
-  width: 100%;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
 
     footer {
       position: relative;
       height: auto;
+      margin-top: auto;
     }
 
     footer img {
@@ -119,108 +104,267 @@
       font-size: 1.25rem;
       font-weight: 600;
     }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .bar {
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        position: fixed;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-icons-container {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        justify-items: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-icons-container.open {
+        display: grid;
+      }
+
+      main {
+        margin-top: 100px;
+      }
+
+      section {
+        padding: 30px 20px 40px 20px;
+        text-align: left;
+      }
+    }
+
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50px; 
+      height: 50px; 
+      pointer-events: none; 
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s ease; 
+      z-index: 9999;
+    }
+
+    /* Masonry-style gallery */
+    .gallery {
+      column-count: 3; /* max 3 columns */
+      column-gap: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .gallery {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .gallery {
+        column-count: 1;
+      }
+    }
+
+    .gallery img {
+      width: 100%;
+      display: block;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Modal */
+    #illustration-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0,0,0,0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    #illustration-modal.active {
+      display: flex;
+    }
+
+    #illustration-modal-content {
+      background: white;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 0.5rem;
+      overflow: auto;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #illustration-modal-content img {
+      width: auto;
+      height: auto;
+      max-width: 90vw;   /* Fit width to viewport */
+      max-height: 80vh;  /* Fit height to viewport */
+      border-radius: 0.5rem;
+    }
+
+    #illustration-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #333;
+    }
   </style>
 </head>
-<body class="text-gray-800 font-sans">
+<body class="bg-white text-gray-800">
 
-<!-- Navbar -->
-<nav>
-  <div class="max-w-8xl mx-20 px-8 flex justify-between items-center">
-    <!-- Left: Logo -->
-    <a href="index.html">
+  <img src="icon_asset_zahirah/zahirah_favicon.png" alt="Mouse Icon" class="custom-cursor" id="cursor">
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+  </script>
+
+  <nav>
+    <a href="index.html" class="logo-area">
       <img src="icon_asset_zahirah/mylogo.png" alt="Zahirah SN Logo" class="logo-img" />
     </a>
 
-    <!-- Right: All 6 Icons in a row -->
-    <div class="flex space-x-6">
-      <a href="books.html" aria-label="Books">
-        <img src="icon_asset_zahirah/icon_books2.png" alt="Books" class="nav-icon" />
-      </a>
-      <a href="branding.html" aria-label="Branding">
-        <img src="icon_asset_zahirah/icon_branding2.png" alt="Branding" class="nav-icon" />
-      </a>
-      <a href="aboutme.html" aria-label="About Me">
-        <img src="icon_asset_zahirah/icon_aboutme2.png" alt="About Me" class="nav-icon" />
-      </a>
-      <a href="animation.html" aria-label="Animation">
-        <img src="icon_asset_zahirah/icon_animation2.png" alt="Animation" class="nav-icon" />
-      </a>
+    <button id="menu-toggle" class="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
 
-      <!-- Illustration icon with yellow background -->
-      <div class="flex flex-col items-center">
-        <a href="illustration.html" aria-label="Illustration">
-          <div class="nav-icon-active">
-            <img src="icon_asset_zahirah/icon_illustration2.png" alt="Illustration" class="nav-icon" />
-          </div>
-        </a>
-      </div>
-
-      <a href="wayfinding.html" aria-label="Wayfinding">
-        <img src="icon_asset_zahirah/icon_wayfinding2.png" alt="Wayfinding" class="nav-icon" />
-      </a>
+    <div id="nav-icons" class="nav-icons-container">
+      <a href="books.html"><img src="icon_asset_zahirah/icon_books2.png" alt="Books" class="nav-icon" /></a>
+      <a href="branding.html"><img src="icon_asset_zahirah/icon_branding2.png" alt="Branding" class="nav-icon" /></a>
+      <a href="aboutme.html"><img src="icon_asset_zahirah/icon_aboutme2.png" alt="About Me" class="nav-icon" /></a>
+      <a href="animation.html"><img src="icon_asset_zahirah/icon_animation2.png" alt="Animation" class="nav-icon" /></a>
+      <a href="illustration.html"><div class="nav-icon-active"><img src="icon_asset_zahirah/icon_illustration2.png" alt="Illustration" class="nav-icon" /></div></a>
+      <a href="wayfinding.html"><img src="icon_asset_zahirah/icon_wayfinding2.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- illus coba cara lain -->
- <section class="pt-60 pb-16 bg white text-center">
+  <main> 
+    <section class="pt-16 pb-16 px-6 bg-white text-center">
+      <div class="gallery">
+        <img src="illustration_zahirah/zahirahsalmanuha_cookingplay.jpg" alt="Cooking Play" data-title="Cooking Play" data-desc="Illustration of cooking play">
+        <img src="illustration_zahirah/zahirahsalmanuha_foodwaste.jpg" alt="Food Waste" data-title="Food Waste" data-desc="Illustration highlighting food waste">
+        <img src="illustration_zahirah/zahirahsalmanuha_letsplay.jpg" alt="Let's Play" data-title="Let's Play" data-desc="Children playing illustration">
+        <img src="illustration_zahirah/zahirahsalmanuha_traditionalmarket.jpg" alt="Traditional Market" data-title="Traditional Market" data-desc="Illustration of traditional market">
+        <img src="illustration_zahirah/school_zahirahsalmanuha.jpg" alt="School" data-title="School" data-desc="Illustration of a school scene">
+        <img src="illustration_zahirah/zahirahsalmanuha_neighbourhood.jpg" alt="Neighbourhood" data-title="Neighbourhood" data-desc="Illustration of a neighborhood">
+        <img src="paris.jpg" alt="Paris" data-title="Paris" data-desc="Illustration of Paris">
+        <img src="illustration_zahirah/zahirahsalmanuha_traditionalgame.jpg" alt="Traditional Game" data-title="Traditional Game" data-desc="Children playing traditional game">
+        <img src="wedding.jpg" alt="Wedding" data-title="Wedding" data-desc="Illustration of wedding">
+        <img src="mountainskies.jpg" alt="Mountain Skies" data-title="Mountain Skies" data-desc="Illustration of mountains and skies">
+        <img src="rocks.jpg" alt="Rocks" data-title="Rocks" data-desc="Illustration of rocks">
+        <img src="underwater.jpg" alt="Underwater" data-title="Underwater" data-desc="Underwater illustration">
+      </div>
+    </section>
 
-<div class="row">
-  <div class="column">
-    <img src="illustration_zahirah/zahirahsalmanuha_cookingplay.jpg">
-    <img src="illustration_zahirah/zahirahsalmanuha_foodwaste.jpg">
-    <img src="illustration_zahirah/zahirahsalmanuha_letsplay.jpg">
-    <img src="illustration_zahirah/zahirahsalmanuha_traditionalmarket.jpg">
-    <img src="illustration_zahirah/school_zahirahsalmanuha.jpg">
-    <img src="illustration_zahirah/zahirahsalmanuha_neighbourhood.jpg">
-    <img src="paris.jpg">
-  </div>
-  <div class="column">
-    <img src="illustration_zahirah/zahirahsalmanuha_letsplay.jpg">
-    <img src="illustration_zahirah/zahirahsalmanuha_traditionalgame.jpg">
-    <img src="wedding.jpg">
-    <img src="mountainskies.jpg">
-    <img src="rocks.jpg">
-    <img src="underwater.jpg">
-  </div>
-  <div class="column">
-    <img src="illustration_zahirah/zahirahsalmanuha_traditionalmarket.jpg">
-    <img src="rocks.jpg">
-    <img src="falls2.jpg">
-    <img src="paris.jpg">
-    <img src="nature.jpg">
-    <img src="mist.jpg">
-    <img src="paris.jpg">
-  </div>
-  <div class="column">
-    <img src="underwater.jpg">
-    <img src="ocean.jpg">
-    <img src="wedding.jpg">
-    <img src="mountainskies.jpg">
-    <img src="rocks.jpg">
-    <img src="underwater.jpg">
-  </div>
-</div>
+    <div id="illustration-modal">
+      <div id="illustration-modal-content">
+        <button id="illustration-close">&times;</button>
+        <img id="illustration-img" src="" alt="Illustration">
+        <h2 id="illustration-title" class="text-xl font-bold mt-2 mb-1"></h2>
+        <p id="illustration-desc" class="text-gray-700"></p>
+      </div>
+    </div>
 
-<!-- Modal -->
-<div id="illustration-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-  <div class="rounded-lg shadow-lg max-w-md w-full p-4 relative">
-    <button id="illustration-close" class="absolute top-2 right-2 text-2xl">&times;</button>
-    <img id="illustration-img" src="" alt="Illustration" class="w-full rounded-lg mb-4" />
-    <h2 id="illustration-title" class="text-xl font-bold mb-2"></h2>
-    <p id="illustration-desc" class="text-black-600"></p>
-  </div>
-</div>
+    <footer>
+      <img src="icon_asset_zahirah/zahirah_footer.png" alt="Footer background" />
+      <div>© 2025 Zahirah SN</div>
+    </footer>
+  </main>
 
-<!-- Footer -->
-<footer>
-  <img src="icon_asset_zahirah/zahirah_footer.png" alt="Footer background" />
-  <div>© 2025 Zahirah SN</div>
-</footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navIcons = document.getElementById('nav-icons');
+    menuToggle.addEventListener('click', () => {
+      navIcons.classList.toggle('open');
+    });
 
-<!-- Scripts -->
-<script src="illustration.js"></script>
-<script src="navbar.js"></script>
+    const galleryImgs = document.querySelectorAll('.gallery img');
+    const modal = document.getElementById('illustration-modal');
+    const modalImg = document.getElementById('illustration-img');
+    const modalTitle = document.getElementById('illustration-title');
+    const modalDesc = document.getElementById('illustration-desc');
+    const modalClose = document.getElementById('illustration-close');
+
+    galleryImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalImg.src = img.src;
+        modalTitle.textContent = img.dataset.title;
+        modalDesc.textContent = img.dataset.desc;
+      });
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+  </script>
 
 </body>
 </html>
