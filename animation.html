@@ -184,26 +184,22 @@
       z-index: 9999;
     }
 
-    .profile-row {
+    /* Centered video styling */
+    .video-wrapper {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    @media (min-width: 768px) {
-      .profile-row {
-        flex-direction: row;
-        gap: 40px;
-      }
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 3rem;
     }
 
     .video-container {
       position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
+      width: 80%;
+      max-width: 960px;
+      aspect-ratio: 16 / 9;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      flex: 1;
       overflow: hidden;
     }
 
@@ -214,42 +210,6 @@
       width: 100%;
       height: 100%;
       border: 0;
-    }
-
-    @media (min-width: 768px) {
-      .video-container {
-        padding-bottom: 0;
-        height: 350px;
-      }
-
-      .video-container iframe {
-        height: 100%;
-      }
-    }
-
-    .profile-text {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 12px;
-      padding-right: 30px;
-    }
-
-    /* ===== New Photo Gallery Styles ===== */
-    .photo-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .photo-gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
     }
 
   </style>
@@ -295,7 +255,7 @@
     <section>
       <div class="max-w-7xl mx-auto px-4 md:px-30 flex flex-col md:flex-col md:items-start -mt-5">
 
-        <!-- Text Content First -->
+        <!-- Page title and intro -->
         <div class="w-full flex justify-center mt-6 mb-12">
           <div class="text-center px-2 md:px-8 max-w-5xl">
             <h1 class="text-5xl font-bold mb-2">Animation</h1>
@@ -306,37 +266,101 @@
           </div>
         </div>
 
-        <!-- Cover Video Under Text -->
-        <div class="video-container mb-5">
-          <iframe src="https://www.youtube.com/embed/YOUR_COVER_VIDEO_ID" 
-                  title="Zahirah SN Cover Video" 
+        <!-- Cover video -->
+        <div class="video-wrapper">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/YOUR_COVER_VIDEO_ID" 
+                    title="Zahirah SN Cover Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- More Animations Carousel -->
+        <div class="w-full flex flex-col items-center mt-16">
+          <h2 class="text-3xl font-bold mb-6">More Animations</h2>
+
+          <div class="relative w-4/5 max-w-5xl overflow-hidden rounded-lg shadow-lg">
+            <!-- Carousel inner -->
+            <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+              <!-- Video 1 -->
+              <div class="min-w-full flex-shrink-0">
+                <iframe 
+                  src="https://www.youtube.com/embed/SOQIqsEcNK0?si=vdKAsjtrv93B5wMX" 
+                  title="Animation 1" 
                   frameborder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen>
-          </iframe>
-        </div>
+                  allowfullscreen
+                  class="w-full aspect-video"></iframe>
+              </div>
 
-        <div class="profile-row mb-10">
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Zahirah SN Profile Video" frameborder="0" allowfullscreen></iframe>
+              <!-- Video 2 -->
+              <div class="min-w-full flex-shrink-0">
+                <iframe 
+                  src="  https://www.youtube.com/embed/fdW5XU7XCM4?si=TIUkT1myExl_NkHP" 
+                  title="Animation 2" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  class="w-full aspect-video"></iframe>
+              </div>
+
+              <!-- Video 3 -->
+              <div class="min-w-full flex-shrink-0">
+                <iframe 
+                  src="https://www.youtube.com/embed/usF0oLG6q_w?si=nYKKyrInPdnSg3pW" 
+                  title="Animation 3" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  class="w-full aspect-video"></iframe>
+              </div>
+
+               <!-- Video 4 -->
+              <div class="min-w-full flex-shrink-0">
+                <iframe 
+                  src="https://www.youtube.com/embed/T1LbAIp0Ezs?si=WleMNX1bntEV0sfn" 
+                  title="Animation 3" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  class="w-full aspect-video"></iframe>
+              </div>
+
+                <!-- Video 5 -->
+                <div class="min-w-full flex-shrink-0">
+                  <iframe 
+                    src="https://www.youtube.com/embed/pIlzgaV2J4E?si=Us5A65g8YGwG6AAv" 
+                    title="Animation 3" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    class="w-full aspect-video"></iframe>
+                </div>
+
+                 <!-- Video 6 -->
+                 <div class="min-w-full flex-shrink-0">
+                  <iframe 
+                    src="https://www.youtube.com/embed/fpyioUe7B9I?si=so4EYfBpId9L3fO8" 
+                    title="Animation 3" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    class="w-full aspect-video"></iframe>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <button id="prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/70 hover:bg-white text-gray-700 rounded-full p-2 shadow-md">
+              &#8592;
+            </button>
+            <button id="next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/70 hover:bg-white text-gray-700 rounded-full p-2 shadow-md">
+              &#8594;
+            </button>
           </div>
-
-          <div class="profile-text">
-            <h2 class="text-2xl text-black-600 font-bold mt-2">2 Animated Stickers</h2>
-            <p class="text-lg leading-relaxed">
-              The sticker’s design size is 800 x 800 px, and the video is less than 60 seconds long, which makes YouTube automatically convert it into a YouTube short. There are two animated stickers. <br><br>The stickers were animated using Adobe After Effects and Adobe Premiere Pro and uploaded to YouTube.
-            </p>
-          </div>
         </div>
 
-        <div class="photo-gallery">
-          <img src="stickers_asset/zahirah_salma_client_brief_afl.jpg" alt="Gallery Image 1">
-          <img src="stickers_asset/zahirah_salma_colours_afl.jpg" alt="Gallery Image 2">
-          <img src="stickers_asset/zahirah_salma_mockup1_afl.jpg" alt="Gallery Image 3">
-          <img src="stickers_asset/zahirah_salma_mockup2_afl.jpg" alt="Gallery Image 4">
-          <img src="stickers_asset/zahirah_salma_mockup3_afl.jpg" alt="Gallery Image 5">
-          <img src="stickers_asset/zahirah_salma_mockup4_afl.jpg" alt="Gallery Image 6">
-        </div>
       </div>
     </section>
 
@@ -346,11 +370,49 @@
   </main>
 
   <script>
+    // Mobile nav toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navIcons = document.getElementById('nav-icons');
     menuToggle.addEventListener('click', () => {
       navIcons.classList.toggle('open');
     });
+
+    // Carousel logic (manual + auto-slide)
+    const carousel = document.getElementById('carousel');
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+    let index = 0;
+    const totalSlides = carousel.children.length;
+
+    function showSlide(i) {
+      carousel.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % totalSlides;
+      showSlide(index);
+      resetAutoSlide();
+    });
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      showSlide(index);
+      resetAutoSlide();
+    });
+
+    // Auto-slide every 6 seconds
+    let autoSlide = setInterval(() => {
+      index = (index + 1) % totalSlides;
+      showSlide(index);
+    }, 6000);
+
+    function resetAutoSlide() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(() => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+      }, 6000);
+    }
   </script>
 </body>
 </html>
