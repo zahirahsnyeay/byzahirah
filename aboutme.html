@@ -14,8 +14,7 @@
       min-height: 100vh;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
       color: #333;
-      /* Use your custom 32x32 PNG cursor */
-      cursor: url('icon_asset_zahirah/zahirah_favicon.png') 16 16, auto;
+      cursor: none;
     }
 
     /* ===== Left Navbar Column ===== */
@@ -177,10 +176,62 @@
         text-align: left;
       }
     }
+    
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50px; 
+      height: 50px; 
+      pointer-events: none; 
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s ease; 
+      z-index: 9999;
+    }
+
+    /* ===== Social Media Icons (Adjust Individually) ===== */
+    .icon-email {
+      width: 40px;
+      height: 20px;
+      transition: transform 0.3s;
+    }
+
+    .icon-email:hover {
+      transform: scale(1.2);
+    }
+
+    .icon-linkedin {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s;
+    }
+
+    .icon-linkedin:hover {
+      transform: scale(1.1);
+    }
+
+    .icon-youtube {
+      width: 30px;
+      height: 20px;
+      transition: transform 0.3s;
+    }
+
+    .icon-youtube:hover {
+      transform: scale(1.15);
+    }
   </style>
 </head>
+<body class="bg-white text-gray-800">
 
-<body>
+  <img src="icon_asset_zahirah/zahirah_favicon.png" alt="Mouse Icon" class="custom-cursor" id="cursor">
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+  </script>
 
   <!-- ===== Left Navbar Column ===== -->
   <nav>
@@ -230,32 +281,85 @@
             <p class="text-lg leading-relaxed">
               Zahirah Salma Nuha is a final-year Master of Design and Production student at the University of Melbourne, Victorian College of The Arts, specialising in Graphic Design. In 2023, she graduated from Institut Teknologi Sepuluh Nopember (ITS) in Indonesia with Visual Communication Design as the 8th most competitive major at ITS. <br> She earned recognition as the fastest and most outstanding Bachelor of Design graduate. Zahirah is passionate about animation, design, storytelling, and illustration. Her work has gained recognition in Indonesia through several notable competition wins, reflecting her dedication and creative skills.
             </p>
+
+            <!-- Social Media Icons -->
+            <div class="flex gap-4 mt-6">
+              <a href="mailto:zahirahsalma@gmail.com" target="_blank" aria-label="Email">
+                <img src="icon_asset_zahirah/icon_email.png" alt="Email" class="icon-email" />
+              </a>
+              <a href="https://www.linkedin.com/in/zahirah" target="_blank" aria-label="LinkedIn">
+                <img src="icon_asset_zahirah/icon_linkedin.png" alt="LinkedIn" class="icon-linkedin" />
+              </a>
+              <a href="https://www.youtube.com/@zahirahandzahra" target="_blank" aria-label="YouTube">
+                <img src="icon_asset_zahirah/icon_youtube.png" alt="YouTube" class="icon-youtube" />
+              </a>
+            </div>
+
           </div>
         </div>
 
-        <div class="w-full text-left">
+        <div class="w-full text-left pr-4 md:pr-20">
           <h2 class="text-3xl font-semibold mb-6">Awards</h2>
 
           <div class="mb-6">
-            <h3 class="text-xl font-medium">Best Graphic Design Graduate</h3>
-            <p class="italic text-gray-600">Institut Teknologi Sepuluh Nopember</p>
-            <p class="mt-2 text-gray-700">Recognized as the fastest and most outstanding graduate in the Bachelor of Design program.</p>
+            <h3 class="text-xl font-medium">The First Fastest Bachelor of Design Graduate</h3>
+            <p class="italic text-gray-600">Faculty of Creative Design and Business Digital ITS and Visual Communication Design ITS | (February 2023)	</p>
+            <p class="mt-2 text-gray-700">My twin and I have set a new record of being the first fastest to finish within 3.5 years out of 4 years of a bachelor of design degree at ITS. Successfully broke the stereotype in ITS and three Design Departments by becoming the fastest to complete a Bachelor of Design within 3.5 years. As an outstanding student, I gave a speech on ITS graduation day in my department.</p>
           </div>
 
           <div class="mb-6">
-            <h3 class="text-xl font-medium">Animation Excellence Award</h3>
-            <p class="italic text-gray-600">University of Melbourne</p>
-            <p class="mt-2 text-gray-700">Awarded for innovative storytelling and technical skill in animation projects.</p>
+            <h3 class="text-xl font-medium">One of The Most Active Students in Visual Communication Design ITS </h3>
+            <p class="italic text-gray-600">From Hima Rupa DKV ITS (Visual Communication Design ITS student association) | (January 2022)</p>
+            <p class="mt-2 text-gray-700">Hima Rupa DKV ITS made an appreciation post to the active students in every batch who joined many activities and became the winners of various competitions. I became one of the most active students from the 2019 batch.</p>
           </div>
 
           <div class="mb-6">
-            <h3 class="text-xl font-medium">Illustration Competition Winner</h3>
-            <p class="italic text-gray-600">National Design Association, Indonesia</p>
-            <p class="mt-2 text-gray-700">Recognized for creativity and originality in a nationwide illustration contest.</p>
+            <h3 class="text-xl font-medium">Children Book Illustration Satgas Covid 19 and DKV ITS</h3>
+            <p class="italic text-gray-600">The chosen creation in DKV ITS | (26th July 2021)-(2nd August 2021) </p>
+            <p class="mt-2 text-gray-700">My children's book illustration “Cara Jitu Faikar” (the best way from Faikar) for the illustration course became the best 15 children's books chosen from 50 participants to participate in the children's books compilation Satgas Covid-19.</p>
           </div>
+
+          <div class="mb-6">
+            <h3 class="text-xl font-medium">4th Place in  14th National Student Performance in Technology, Information, and Communication (Gemastik 14) in the Animation Category</h3>
+            <p class="italic text-gray-600">Held by the Ministry of Education and Culture Republic of Indonesia (Kemdikbud) and Telkom University | (October 2021)</p>
+            <p class="mt-2 text-gray-700">Blessing of Motherland (Berkah Tanah Pertiwi) Animation got 4th place in the Gemastik 14 Animation division out of 123 teams from all universities in Indonesia. This animation tells about The Mother of Spices (Indonesia) and reminds the young generation to continue the culture of Indonesian spices. The animation is made by a team of three people.</p>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-xl font-medium">1st Place Animakini (Cikini Animation National Competition)</h3>
+            <p class="italic text-gray-600">Held by the Indonesian Agency for the Creative Economy (Bekraf) and Institute Art Jakarta (IKJ) | (November 2021)</p>
+            <p class="mt-2 text-gray-700">Kumbang Animation is about saving the environment and protecting Indonesia's forests from illegal logging. The animation is made by the team “The Honesty”, which consists of two people. </p>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-xl font-medium">3rd Place Animakini (Cikini Animation National Competition)</h3>
+            <p class="italic text-gray-600">Held by the Indonesian Agency for the Creative Economy (Bekraf) and Institute Art Jakarta (IKJ) | (November 2021)</p>
+            <p class="mt-2 text-gray-700">Besides the Gemastik 14, Berkah Tanah Pertiwi (Blessing Of Motherland) also became the third-place winner of Animakini (Cikini Animation). </p>
         </div>
 
+        <div class="mb-6">
+          <h3 class="text-xl font-medium">The Best 20 Finalist 13th National Student Performance in Technology, Information and Communication (Gemastik 13) in the Animation Category</h3>
+          <p class="italic text-gray-600">Held by the Ministry of Education and Culture Republic of Indonesia (Kemdikbud) and Telkom University | (October 2020)</p>
+          <p class="mt-2 text-gray-700">Besides winning Animakini, Kumbang Animation also became one of the best 20 finalists in Gemastik 13 2020.</p>
       </div>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-medium">The Best 20 Nomination Film BPIP Pancasila National Short Film Competition</h3>
+        <p class="italic text-gray-600">Held by Pancasila Ideology Agency (BPIP) | (August 2020)</p>
+        <p class="mt-2 text-gray-700">Gotong Royong is Us (Gotong Royong adalah Kita) is an animation made by two people to engage Indonesians in gotong royong, work together, and care for each other during the COVID-19 pandemic.</p>
+    </div>
+
+    <div class="mb-6">
+      <h3 class="text-xl font-medium">1st Place in ITB Jalan Jalan 2019 in the field of FSRD (Faculty of Art and Design)</h3>
+      <p class="italic text-gray-600">From Ikamanggaluh ITB and ITB Jalan Jalan 2019 | (January 2019)	</p>
+      <p class="mt-2 text-gray-700">This was my second time winning the ITB Jalan Jalan (IJJ). IJJ is an annual event with participants from high schools across three cities. It is organised by ITB (Institut Teknologi Bandung) student associations from Surabaya, Sidoarjo, and Gresik.<br>One of the competitions was to draw creatively a narrative drawing based on the brief within 90 minutes, a still life drawing approximately within 60 minutes, and a wartegg drawing completion test around 15 minutes.</p>
+  </div>
+
+  <div class="mb-6">
+    <h3 class="text-xl font-medium">2nd Place in ITB Jalan Jalan 2018 in the field of FSRD (Faculty of Art and Design)</h3>
+    <p class="italic text-gray-600">From Ikamanggaluh ITB and ITB Jalan Jalan 2019 | (January 2018)	</p>
+</div>
+
     </section>
 
     <footer>
