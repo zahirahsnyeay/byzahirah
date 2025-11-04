@@ -189,35 +189,20 @@
       z-index: 9999;
     }
 
-    /* ===== Social Media Icons (Adjust Individually) ===== */
-    .icon-email {
-      width: 40px;
-      height: 20px;
-      transition: transform 0.3s;
+        /* ===== New Photo Gallery Styles ===== */
+        .photo-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
     }
 
-    .icon-email:hover {
-      transform: scale(1.2);
-    }
-
-    .icon-linkedin {
-      width: 20px;
-      height: 20px;
-      transition: transform 0.3s;
-    }
-
-    .icon-linkedin:hover {
-      transform: scale(1.1);
-    }
-
-    .icon-youtube {
-      width: 30px;
-      height: 20px;
-      transition: transform 0.3s;
-    }
-
-    .icon-youtube:hover {
-      transform: scale(1.15);
+    .photo-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
     }
   </style>
 </head>
@@ -273,23 +258,28 @@
   <main>
     <section>
       <div class="max-w-7xl mx-auto px-4 md:px-30 flex flex-col md:flex-col md:items-start -mt-5">
-        <img src="illustration_zahirah/zahirahsalmanuha_cookingplay.jpg" alt="books" class="w-full h-auto object-cover rounded-lg shadow-lg mb-5">
+        <img src="book_asset/zahirah_salma_nuha_cover_book.jpg" alt="books" class="w-full h-auto object-cover rounded-lg shadow-lg mb-5">
 
         <div class="w-full flex justify-center mt-6 mb-12">
           <div class="text-center px-2 md:px-8 max-w-5xl">
-            <h1 class="text-5xl font-bold mb-2">Branding</h1>
-            <h2 class="text-2xl text-black-600 font-bold mb-4">AFL Stickers and T-Shirt Design</h2>
+            <h1 class="text-5xl font-bold mb-2">Book Design</h1>
+            <h2 class="text-2xl text-black-600 font-bold mb-4">Publishing as Practice</h2>
             <p class="text-lg text-black-700 text-left mt-10">
-              The project consists of a t-shirt design and 10 illustrative and typographic stickers about AFL that are accessible on a social media platform (Instagram). Two of the stickers are animated. The stickers have vibrant colours, are engaging and appealing, and emphasize creativity and innovation. The purpose is to visualize AFL's content, value, and purpose, Engage with the target audience, and support their expression with the stickers. The client's requested vibe is positivity, celebration, community, happiness, and friendship, which are the feelings that need to be generated. Slogan From Client “Game for Everyone”. The stickers are a medium for engaging with the audience and representing the community, including the players, fans, audience, children, and others.
+              Publication is a medium for artists to articulate artistic expression and a form of discussion that can be a new viewpoint for readers that leads to critical thinking. In this project, I bring the history and culture of the art precinct through the architecture, places, and animals that lived around the art precinct. It involved sharing my experience as a designer and as a master’s student, which involved research and reading. <br><br>The concept of this project is inspired by the term of the spirit world of the First Nation’s storytelling of “dreaming” from the Australian-indigenous culture of the spirit world where some creatures live around us. (Artlandish Aboriginal Art Gallery 2024),  This book has 64 pages. I include interactivity pages such as pop-ups and 3D Augmented reality to engage the readers. Not only that, but there are also cultural aspects to which I have taken the First Nations’ mythological creatures.
             </p>
           </div>
         </div>
 
         <!-- 🖼️ PHOTO GALLERY SECTION (replaces Awards) -->
-          <img src="illustration_zahirah/zahirahsalmanuha_cookingplay.jpg" alt="Gallery Image 1">
-          <img src="branding_zahirah/photo2.jpg" alt="Gallery Image 2">
-          <img src="branding_zahirah/photo3.jpg" alt="Gallery Image 3">
-          <img src="branding_zahirah/photo4.jpg" alt="Gallery Image 4">
+        <div class="photo-gallery">
+          <img src="book_asset/zahirah_salma_nuha_book1_cover.jpg" alt="Gallery Image 1">
+          <img src="book_asset/zahirah_salma_nuha_book2_content.jpg" alt="Gallery Image 2">
+          <img src="book_asset/zahirah_salma_nuha_book3_content.jpg" alt="Gallery Image 3">
+          <img src="book_asset/zahirah_salma_nuha_book4_content.jpg" alt="Gallery Image 4">
+          <img src="book_asset/zahirah_salma_nuha_book5_content.jpg" alt="Gallery Image 5">
+          <img src="book_asset/zahirah_salma_nuha_book6_content.jpg" alt="Gallery Image 6">
+          <img src="book_asset/zahirah_salma_nuha_book7_content.jpg" alt="Gallery Image 7">
+          <img src="book_asset/zahirah_salma_nuha_book8_content.jpg" alt="Gallery Image 8">
         </div>
         <!-- 🖼️ END PHOTO GALLERY -->
       </div>
@@ -297,7 +287,6 @@
 
     <footer>
       <img src="icon_asset_zahirah/zahirah_footer.png" alt="Footer Background" />
-      <div>Zahirah SN 2025</div>
     </footer>
   </main>
 
