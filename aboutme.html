@@ -6,24 +6,47 @@
   <link rel="icon" type="image/png" href="icon_asset_zahirah/zahirah_favicon.png">
   <title>About Me - Zahirah SN</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    nav {
+    /* ===== Custom Cursor ===== */
+    body {
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-      box-shadow: none !important;
-      border-bottom: none !important;
-      padding-top: 30px;
-      padding-bottom: 30px;
-      background-image: url('icon_asset_zahirah/zahirah_header_white.png');
+      color: #333;
+      /* Use your custom 32x32 PNG cursor */
+      cursor: url('icon_asset_zahirah/zahirah_favicon.png') 16 16, auto;
+    }
+
+    /* ===== Left Navbar Column ===== */
+    nav {
+      width: 350px;
+      flex-shrink: 0;
+      background-image: url('icon_asset_zahirah/bg_navbar.png');
       background-size: cover;
       background-position: center;
-      position: fixed;
-      width: 100%;
+      padding: 30px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
       z-index: 50;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    .logo-img {
+      height: 70px;
+      width: auto;
+    }
+
+    .nav-icons-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 40px;
     }
 
     .nav-icon {
@@ -34,7 +57,7 @@
     }
 
     .nav-icon-active {
-      background-color: #ebffcb; /* bright yellow */
+      background-color: #ebffcb;
       padding: 6px 8px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(213, 213, 213, 0.6);
@@ -45,25 +68,27 @@
       box-shadow: 0 4px 12px rgba(255, 214, 0, 0.9);
     }
 
-    .logo-img {
-      height: 80px;
-      width: auto;
-    }
-
-    body {
+    /* ===== Right Content Column ===== */
+    main {
+      flex: 1;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      margin: 0;
+      background-image: url('icon_asset_zahirah/bg_page.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     section {
       flex-grow: 1;
+      padding: 90px 30px 50px 50px;
     }
 
     footer {
       position: relative;
       height: auto;
+      margin-top: auto;
     }
 
     footer img {
@@ -83,20 +108,93 @@
       font-size: 1.25rem;
       font-weight: 600;
     }
+
+    /* ===== Hamburger (Mobile Only) ===== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .bar {
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      border-radius: 2px;
+    }
+
+    /* ===== Mobile View ===== */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        position: fixed;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-icons-container {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        justify-items: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-icons-container.open {
+        display: grid;
+      }
+
+      main {
+        margin-top: 100px;
+      }
+
+      section {
+        padding: 30px 20px 40px 20px;
+        text-align: left;
+      }
+    }
   </style>
 </head>
-<body class="text-gray-800 font-sans">
 
-<!-- Navbar -->
-<nav>
-  <div class="max-w-8xl mx-20 px-8 flex justify-between items-center">
-    <!-- Left: Logo -->
-    <a href="index.html">
+<body>
+
+  <!-- ===== Left Navbar Column ===== -->
+  <nav>
+    <a href="index.html" class="logo-area">
       <img src="icon_asset_zahirah/mylogo.png" alt="Zahirah SN Logo" class="logo-img" />
     </a>
 
-    <!-- Right: All 6 Icons in a row -->
-    <div class="flex space-x-6">
+    <button id="menu-toggle" class="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+
+    <div id="nav-icons" class="nav-icons-container">
       <a href="books.html" aria-label="Books">
         <img src="icon_asset_zahirah/icon_books2.png" alt="Books" class="nav-icon" />
       </a>
@@ -118,39 +216,60 @@
         <img src="icon_asset_zahirah/icon_wayfinding2.png" alt="Wayfinding" class="nav-icon" />
       </a>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- text judul -->
-<!-- About Me Section -->
-<section class="pt-56 pb-5 bg-white">
-    <div class="max-w-7xl mx-auto px-4 md:px-30 flex flex-col md:flex-row md:items-center md:justify-between">
-    
-    <!-- Photo Area (on the left now) -->
-    <div class="md:w-1/2 flex justify-center mb-10 md:mb-0">
-        <img src="icon_asset_zahirah/zahirah_profile.png" alt="Zahirah SN Photo" class="w-[350px] h-auto object-cover" />
+  <!-- ===== Right Content Column ===== -->
+  <main>
+    <section>
+      <div class="max-w-7xl mx-auto px-4 md:px-30 flex flex-col md:flex-col md:items-start -mt-5">
 
-    </div>
+        <div class="flex flex-col md:flex-row md:items-start gap-20 mb-10">
+          <img src="icon_asset_zahirah/zahirah_profile.png" alt="Zahirah SN Photo" class="w-[350px] h-auto object-cover" />
+          <div class="md:w-1/2 md:pl-2">
+            <h1 class="text-4xl font-bold mb-4">I'm Zahirah</h1>
+            <p class="text-lg leading-relaxed">
+              Zahirah Salma Nuha is a final-year Master of Design and Production student at the University of Melbourne, Victorian College of The Arts, specialising in Graphic Design. In 2023, she graduated from Institut Teknologi Sepuluh Nopember (ITS) in Indonesia with Visual Communication Design as the 8th most competitive major at ITS. <br> She earned recognition as the fastest and most outstanding Bachelor of Design graduate. Zahirah is passionate about animation, design, storytelling, and illustration. Her work has gained recognition in Indonesia through several notable competition wins, reflecting her dedication and creative skills.
+            </p>
+          </div>
+        </div>
 
-    <!-- Text Area -->
-    <div class="md:w-1/2 md:pl-12">
-      <h1 class="text-4xl font-bold mb-4">I'm Zahirah</h1>
-      <p class="text-lg leading-relaxed">
-        Zahirah Salma Nuha is a final-year Master of Design and Production student at the University of Melbourne, Victorian College of The Arts, specialising in Graphic Design. In 2023, She graduated from Institut Teknologi Sepuluh Nopember (ITS) in Indonesia with Visual Communication Design as the 8th most competitive major at ITS. She earned recognition as the fastest and most outstanding Bachelor of Design graduate. Zahirah is passionate about animation, design, storytelling, and illustration. Her work has gained recognition in Indonesia through several notable competition wins, reflecting her dedication and creative skills.
-      </p>
-    </div>
+        <div class="w-full text-left">
+          <h2 class="text-3xl font-semibold mb-6">Awards</h2>
 
-  </div>
-</section>
+          <div class="mb-6">
+            <h3 class="text-xl font-medium">Best Graphic Design Graduate</h3>
+            <p class="italic text-gray-600">Institut Teknologi Sepuluh Nopember</p>
+            <p class="mt-2 text-gray-700">Recognized as the fastest and most outstanding graduate in the Bachelor of Design program.</p>
+          </div>
 
-<!-- Footer -->
-<footer>
-  <img src="icon_asset_zahirah/zahirah_footer.png" alt="Footer background" />
-  <div>© 2025 Zahirah SN</div>
-</footer>
+          <div class="mb-6">
+            <h3 class="text-xl font-medium">Animation Excellence Award</h3>
+            <p class="italic text-gray-600">University of Melbourne</p>
+            <p class="mt-2 text-gray-700">Awarded for innovative storytelling and technical skill in animation projects.</p>
+          </div>
 
-<!-- Scripts -->
-<script src="navbar.js"></script>
+          <div class="mb-6">
+            <h3 class="text-xl font-medium">Illustration Competition Winner</h3>
+            <p class="italic text-gray-600">National Design Association, Indonesia</p>
+            <p class="mt-2 text-gray-700">Recognized for creativity and originality in a nationwide illustration contest.</p>
+          </div>
+        </div>
 
+      </div>
+    </section>
+
+    <footer>
+      <img src="icon_asset_zahirah/zahirah_footer.png" alt="Footer background" />
+    </footer>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById('menu-toggle');
+    const navIcons = document.getElementById('nav-icons');
+
+    menuBtn.addEventListener('click', () => {
+      navIcons.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
