@@ -34,14 +34,14 @@
       z-index: 2; 
     }
 
-    /* Initially set the logo to be invisible */
+
     .logo {
       max-width: 600px;
       height: auto;
       margin-bottom: 4rem;
       position: relative;
-      opacity: 0; /* Make it invisible by default */
-      transition: opacity 2s ease-in-out; /* Fade-in transition */
+      opacity: 0; 
+      transition: opacity 2s ease-in-out;
     }
 
     .curve-container {
@@ -213,11 +213,11 @@
   </footer>
 
   <script>
-    // Add an event listener to trigger the fade-in effect only once on page load
+
     window.addEventListener('DOMContentLoaded', function () {
       const logo = document.querySelector('.logo');
-      // Trigger the fade-in transition when the page loads
-      logo.style.opacity = 1; // Make it visible
+
+      logo.style.opacity = 1; 
     });
   </script>
 
