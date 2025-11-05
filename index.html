@@ -31,6 +31,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      z-index: 2; 
     }
 
     .logo {
@@ -38,7 +39,6 @@
       height: auto;
       margin-bottom: 4rem;
       position: relative;
-      z-index: 2;
     }
 
     .curve-container {
@@ -84,17 +84,87 @@
       margin-top: auto;
     }
 
-    /* Responsive for phones: 3 columns × 2 rows */
+    .clouds-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%; 
+      pointer-events: none; 
+      z-index: 1;
+      overflow: hidden;
+    }
+
+
+    .cloud {
+      position: absolute;
+      background-image: url('icon_asset_zahirah/clouds.png'); 
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 200px;
+      height: 120px; 
+      opacity: 0.8;
+      animation: moveClouds linear infinite;
+    }
+
+
+    @keyframes moveClouds {
+      0% {
+        transform: translateX(-250px); 
+      }
+      100% {
+        transform: translateX(100vw); 
+      }
+    }
+
+
+    .cloud:nth-child(1) {
+      top: 10%;
+      animation-duration: 18s;
+      animation-delay: 0s;
+    }
+
+    .cloud:nth-child(2) {
+      top: 20%;
+      animation-duration: 12s;
+      animation-delay: 0s;
+    }
+
+    .cloud:nth-child(3) {
+      top: 30%;
+      animation-duration: 15s;
+      animation-delay: 0s;
+    }
+
+    .cloud:nth-child(4) {
+      top: 50%;
+      animation-duration: 20s;
+      animation-delay: 0s;
+    }
+
+    .cloud:nth-child(5) {
+      top: 60%;
+      animation-duration: 25s;
+      animation-delay: 0s;
+    }
+
+    .cloud:nth-child(6) {
+      top: 70%;
+      animation-duration: 22s;
+      animation-delay: 0s;
+    }
+
+
     @media (max-width: 640px) {
       .curve-container {
-        flex-wrap: wrap;           /* allow icons to wrap to next row */
-        justify-content: center;   /* center the icons */
-        gap: 1rem;                 /* spacing between icons */
+        flex-wrap: wrap;   
+        justify-content: center; 
+        gap: 1rem; 
       }
 
       .curve-container a {
-        flex: 0 0 calc(33.33% - 0.66rem); /* 3 columns */
-        max-width: 100px;                  /* max width of each icon */
+        flex: 0 0 calc(33.33% - 0.66rem);
+        max-width: 100px;
       }
 
       .logo {
@@ -105,6 +175,16 @@
   </style>
 </head>
 <body>
+
+  <div class="clouds-container">
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+  </div>
+
   <section>
     <img src="icon_asset_zahirah/mylogo.png" alt="Zahirah SN Logo" class="logo" />
 
